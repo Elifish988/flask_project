@@ -3,6 +3,7 @@ import os
 from flask import Flask
 from db import db
 from routes.blueprint import players_bp
+from routes.blueprint_taem import teams_bp
 from servisses.load_players import load_players_start, add_players_to_db
 
 app = Flask(__name__)
@@ -27,6 +28,7 @@ with app.app_context():
 
 # קריאה לבלו פרינט
 app.register_blueprint(players_bp)
+app.register_blueprint(teams_bp)
 
 if __name__ == '__main__':
     app.run()
