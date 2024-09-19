@@ -2,7 +2,7 @@ from flask import Blueprint, request, jsonify
 from db import db
 from models.Team import Team
 
-teams_bp = Blueprint('teams', __name__)
+teams_bp = Blueprint('teams', __name__, url_prefix='/api')
 
 
 @teams_bp.route('/teams', methods=['POST'])
